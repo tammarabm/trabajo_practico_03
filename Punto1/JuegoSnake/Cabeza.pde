@@ -1,3 +1,5 @@
 class Cabeza{
-  private Animal animal;
+  public void comer(Animal animal){
+  
+  }
 }
