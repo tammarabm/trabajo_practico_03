@@ -1,4 +1,4 @@
-class ColliderCircular{
+/**class ColliderCircular{
   private float radio;
   private PVector posCentro;
   
@@ -10,3 +10,5 @@ class ColliderCircular{
   public boolean validarColision(ColliderCircular otroCollider){
     
   }
+  
+  */
