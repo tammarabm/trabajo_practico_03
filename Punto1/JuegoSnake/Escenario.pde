@@ -1,4 +1,5 @@
-class Escenario extends GameObject{
+class Escenario{
+  private PVector posicion; 
   private PImage imagen;
   private int tiempo;
   private int alto;
@@ -21,6 +22,9 @@ class Escenario extends GameObject{
   
   public PVector getPosicion(){
     return this.posicion;
+  }
+  public void setPosicion(PVector posicion){
+   this.posicion=posicion;  
   }
   
   public int getAlto(){

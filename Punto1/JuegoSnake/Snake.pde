@@ -12,7 +12,7 @@ class Snake extends GameObject {
     cabeza.display();
   }
   
-  public void mover(int direccion){
+  public void mover(int direccion, Escenario escenario){
     switch(direccion){
       case 0: 
         if(this.posicion.y > escenario.getPosicion().y){

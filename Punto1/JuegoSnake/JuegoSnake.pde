@@ -11,6 +11,7 @@ public void setup(){
   snake = new Snake();
   snake.setPosicion(new PVector(width/2, height/2));
   snake.setVelocidad(new PVector(4, 4));
+  
   // Inicialmente sin movimento
   direccion = -1; 
   direccionNueva = -1;
@@ -23,7 +24,7 @@ public void draw(){
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if
   }
   if (direccion != -1) {
-    snake.mover(direccion); // Mueve el snake en la dirección actual
+    snake.mover(direccion, escenario); // Mueve el snake en la dirección actual
   }
 }
 
