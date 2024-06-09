@@ -4,7 +4,9 @@ private int direccionNueva; // Nueva dirección del snake
 
 public void setup(){
   size(600, 700);
-  snake = new Snake(new PVector(width/2, height/2), new PVector(4, 4));
+  snake = new Snake();
+  snake.setPosicion(new PVector(width/2, height/2));
+  snake.setVelocidad(new PVector(4, 4));
   // Inicialmente sin movimento
   direccion = -1; 
   direccionNueva = -1;
