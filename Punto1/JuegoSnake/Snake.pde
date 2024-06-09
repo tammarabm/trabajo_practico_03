@@ -15,19 +15,30 @@ class Snake extends GameObject {
   public void mover(int direccion){
     switch(direccion){
       case 0: 
-        this.posicion.y-=this.velocidad.y;
-        break;
+        if(this.posicion.y > escenario.getPosicion().y){
+          this.posicion.y-=this.velocidad.y;
+          break;
+        }
+       break;
       case 1: 
-        this.posicion.y+=this.velocidad.y;
+        if(this.posicion.y < escenario.getPosicion().y+escenario.getAlto()-20){
+          this.posicion.y+=this.velocidad.y;
+          break;
+        }
         break;
       case 2: 
-        this.posicion.x-=this.velocidad.x; 
+        if(this.posicion.x > escenario.getPosicion().x){
+          this.posicion.x-=this.velocidad.x; 
+          break;
+        }
         break;
-      case 3: 
-        this.posicion.x+=this.velocidad.x;
+      case 3:
+        if(this.posicion.x < escenario.getPosicion().x+escenario.getAncho()-20){
+          this.posicion.x+=this.velocidad.x;
+          break;
+        }
         break;
-    }
-    
+    }    
   }
   public void aumentarCuerpo(){
   }
