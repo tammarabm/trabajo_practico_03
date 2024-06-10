@@ -1,4 +1,4 @@
-/**class ColliderCircular{
+class Collider{
   private float radio;
   private PVector posCentro;
   
@@ -11,4 +11,3 @@
     
   }
   
-  */

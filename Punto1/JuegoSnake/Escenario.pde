@@ -9,13 +9,17 @@ class Escenario{
     imagen= loadImage("fondoSnake.jpg");   
     this.alto= height-100;
     this.ancho= width-100;
-    animal= new Animal();
-    animal.setPosicion(new PVector(random(50, this.ancho),random(50, this.alto)));
+    crearAnimal();
+    
+  }
+  public void crearAnimal(){
+    this.animal= new Animal();
+    animal.setPosicion(new PVector(random(50, this.ancho), random(50, this.alto)));
+  
   }
   
   public void display(){
- 
-    image(imagen, this.posicion.x, this.posicion.y, ancho, alto);
+    image(imagen, this.posicion.x, this.posicion.y, this.ancho, this.alto);
     animal.display();
   }
   public void visualizarPuntaje(){

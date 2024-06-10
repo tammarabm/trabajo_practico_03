@@ -16,5 +16,4 @@ class Animal extends GameObject{
     image(imagen, this.posicion.x, this.posicion.y, 30,30);
   }
   
-
 }

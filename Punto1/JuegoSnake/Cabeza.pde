@@ -5,7 +5,8 @@ class Cabeza extends GameObject {
    
     rect(this.posicion.x, this.posicion.y, 20,20);
   }
-}
+
   public void comer(Animal animal){
   
   }
+} 
