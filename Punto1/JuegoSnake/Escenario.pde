@@ -4,14 +4,19 @@ class Escenario{
   private int tiempo;
   private int alto;
   private int ancho;
+  private Animal animal;
   public Escenario(){
-    imagen= loadImage("fondoSnake.jpg");
+    imagen= loadImage("fondoSnake.jpg");   
     this.alto= height-100;
     this.ancho= width-100;
+    animal= new Animal();
+    animal.setPosicion(new PVector(random(50, this.ancho),random(50, this.alto)));
   }
   
   public void display(){
+ 
     image(imagen, this.posicion.x, this.posicion.y, ancho, alto);
+    animal.display();
   }
   public void visualizarPuntaje(){
   }
