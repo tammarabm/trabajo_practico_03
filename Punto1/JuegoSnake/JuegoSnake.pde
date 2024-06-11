@@ -3,11 +3,11 @@ private Escenario escenario;
 private int direccion; // Dirección actual del snake
 private int direccionNueva; // Nueva dirección del snake
 
+
 public void setup(){
   size(600, 700);
   escenario= new Escenario();
   escenario.setPosicion(new PVector(50, 50));
-  
   snake = new Snake();
   snake.setPosicion(new PVector(width/2, height/2));
   snake.setVelocidad(new PVector(4, 4));
