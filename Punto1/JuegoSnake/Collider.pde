@@ -9,22 +9,38 @@ class Collider{
     this.alto=alto;
   }
   
-  public boolean validarColision(ColliderCircular otroCollider){
+  public boolean validarColision(Collider otroCollider){
     boolean isCollide;
     if (this.posicion.x > otroCollider.getPosicion().x+otroCollider.getAncho()){
       isCollide=false;
     }
-    if (this.posicion.x+getAncho() < otroCollider.getPosicion().x){
+    else if (this.posicion.x+getAncho() < otroCollider.getPosicion().x){
       isCollide=false;
     }
-    if (this.posicion.y > otroCollider.getPosicion().y+otroCollider.getAlto()){
+    else if (this.posicion.y > otroCollider.getPosicion().y+otroCollider.getAlto()){
       isCollide=false;
     }
-    if (this.posicion.y + getAlto()< otroCollider.getPosicion().y){
+    else if (this.posicion.y + getAlto()< otroCollider.getPosicion().y){
       isCollide=false;
     }else{
       isCollide=true;
     }
+    println(this.posicion);
+    println(otroCollider.getPosicion());
     return isCollide;
   }
+  public PVector getPosicion(){
+    return this.posicion; 
+  }
+  public float getAncho(){
+    return this.ancho;
+  }
+  public float getAlto(){
+    return this.alto;
+  }
+  
+  public void setPosicion(PVector posicion){
+    this.posicion=posicion;
+  }
+}
   
