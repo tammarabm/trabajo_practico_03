@@ -22,7 +22,7 @@ public void draw(){
   snake.display();
   cabeza= snake.getCabeza();
   animal= escenario.getAnimal();
-  cabeza.comer(animal);
+  cabeza.comer(animal, escenario);
   
   if (direccionNueva != -1) {
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if

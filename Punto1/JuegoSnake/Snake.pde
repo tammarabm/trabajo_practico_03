@@ -2,7 +2,7 @@ class Snake extends GameObject {
   private PVector velocidad;
   private int puntaje; 
   private Cabeza cabeza;
-  private Cuerpo[]cuerpos;
+  private ArrayList<Cuerpo>cuerpos;
   public Snake(){ 
   }
   

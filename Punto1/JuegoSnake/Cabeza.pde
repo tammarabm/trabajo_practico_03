@@ -11,11 +11,13 @@ class Cabeza {
     rect(this.posicion.x, this.posicion.y, 20,20);
   }
 
-  public void comer(Animal a){
+  public void comer(Animal a, Escenario e){
     boolean isCollide=this.collider.validarColision(a.getCollider());
     if (isCollide){
       println("HAY COLISION");
       println(isCollide);
+      e.eliminarAnimal();
+      e.cambiarPosicionAnimal();
       
     }else{
       println("NO HAY COLISION");
