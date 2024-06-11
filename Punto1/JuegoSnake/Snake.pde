@@ -2,14 +2,13 @@ class Snake extends GameObject {
   private PVector velocidad;
   private int puntaje; 
   private Cabeza cabeza;
-  private Cuerpo[]cuerpos;
+  private ArrayList<Cuerpo>cuerpos;
   public Snake(){ 
   }
   
   public void display(){
-    cabeza= new Cabeza();
-    cabeza.setPosicion(new PVector(this.posicion.x, this.posicion.y));
-    cabeza.display();
+    this.cabeza= new Cabeza(new PVector(this.posicion.x, this.posicion.y));
+    this.cabeza.display();
   }
   
   public void mover(int direccion, Escenario escenario){
@@ -49,5 +48,8 @@ class Snake extends GameObject {
   public void setVelocidad(PVector velocidad){
     this.velocidad=velocidad;
   }
+  public Cabeza getCabeza(){
+    return this.cabeza;
   
+}
 }

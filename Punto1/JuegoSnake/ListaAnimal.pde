@@ -1,4 +1,3 @@
-
 class ListaAnimal{
   ArrayList <Animal> animales;
   public ListaAnimal(){
