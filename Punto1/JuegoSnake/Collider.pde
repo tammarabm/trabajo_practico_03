@@ -25,8 +25,8 @@ class Collider{
     }else{
       isCollide=true;
     }
-    println(this.posicion);
-    println(otroCollider.getPosicion());
+    //println(this.posicion);
+    //println(otroCollider.getPosicion());
     return isCollide;
   }
   public PVector getPosicion(){

@@ -8,23 +8,30 @@ class Cabeza {
     this.collider= new Collider(this.posicion,20,20);
   }
   public void display(){
+    fill(#B71C1C);
+    //noStroke();
     rect(this.posicion.x, this.posicion.y, 20,20);
   }
 
   public void comer(Animal a, Escenario e){
-    boolean isCollide=this.collider.validarColision(a.getCollider());
-    if (isCollide){
-      println("HAY COLISION");
-      println(isCollide);
-      e.eliminarAnimal();
-      e.cambiarPosicionAnimal();
-      
-    }else{
-      println("NO HAY COLISION");
+    if (a!=null){
+      boolean isCollide=this.collider.validarColision(a.getCollider());
+      if (isCollide){
+        //println("HAY COLISION");
+        //println(isCollide);
+        e.eliminarAnimal();
+        e.cambiarPosicionAnimal();
+        snake.aumentarCuerpo();
+      }else{
+      //println("NO HAY COLISION");
+     }
     }
-  }
+   }
   public void setPosicion(PVector posicion){
     this.posicion=posicion;
     this.collider.setPosicion(this.posicion);
+  }
+  public PVector getPosicion(){
+    return this.posicion;
   }
 } 

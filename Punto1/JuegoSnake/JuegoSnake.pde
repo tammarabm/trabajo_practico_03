@@ -9,8 +9,8 @@ public void setup(){
   size(600, 700);
   escenario= new Escenario();
   escenario.setPosicion(new PVector(50, 50));
-  snake = new Snake();
-  snake.setPosicion(new PVector(width/2, height/2));
+  snake = new Snake(new PVector(300,300));
+  //snake.setPosicion(new PVector(width/2, height/2));
   snake.setVelocidad(new PVector(6, 6));  
   // Inicialmente sin movimento
   direccion = -1; 
@@ -23,7 +23,6 @@ public void draw(){
   cabeza= snake.getCabeza();
   animal= escenario.getAnimal();
   cabeza.comer(animal, escenario);
-  
   if (direccionNueva != -1) {
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if
   }
@@ -43,17 +42,3 @@ public void keyPressed(){
      direccionNueva = 3; 
   }
 }
-
-
-/**public void keyPressed(){
-  if (key==  'w' || keyCode== UP){
-    snake.mover(0);
-  }else if (key==  's' || keyCode== DOWN){
-    snake.mover(1);
-  }else if (key==  'a' || keyCode== LEFT){
-    snake.mover(2);
-  }else if (key==  'd' || keyCode== RIGHT){
-    snake.mover(3);
-  }
-}
-*/
