@@ -2,6 +2,7 @@ private Snake snake;
 private Escenario escenario;
 private int direccion; // Dirección actual del snake
 private int direccionNueva; // Nueva dirección del snake
+private int duracionCronometro;
 private Animal animal;
 private Cabeza cabeza;
 
@@ -15,13 +16,26 @@ public void setup(){
   // Inicialmente sin movimento
   direccion = -1; 
   direccionNueva = -1;
+  duracionCronometro = 60;  //60 segundos
 }
 public void draw(){
   background(0);
   escenario.display();
   snake.display();
+  if(duracionCronometro-millis()/1000 >=0){  //Si el tiempo restante es mayor o igual a 0
+    fill(255);
+    textSize(20);
+    text("Segundos: "+(duracionCronometro-millis()/1000),10,20);
+  }else {
+    fill(255); 
+    textAlign(CENTER,CENTER);
+    text("FIN", width/2, height/2);
+    noLoop();
+  }
+  
   cabeza= snake.getCabeza();
   animal= escenario.getAnimal();
+  
   cabeza.comer(animal, escenario);
   if (direccionNueva != -1) {
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if
