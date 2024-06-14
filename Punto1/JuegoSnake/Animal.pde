@@ -9,7 +9,7 @@ class Animal extends GameObject{
     this.posicion=posicion;
   }
   public Animal(PVector posicion, float ancho, float alto, int puntaje){
-    imagen =loadImage("raton1.png");
+    imagen =loadImage("raton_.png");
     this.posicion=posicion;
     this.ancho=ancho;
     this.alto=alto;

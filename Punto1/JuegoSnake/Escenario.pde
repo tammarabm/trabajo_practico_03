@@ -12,7 +12,7 @@ class Escenario{
     
   }
   public void crearAnimal(){
-    this.animal= new Animal(new PVector(300,400), 35,35,1);
+    this.animal= new Animal(new PVector(300,400), 40,40,1);
     //this.animal.setPosicion(new PVector(random(50, this.ancho), random(50, this.alto)));
   }
   public void cambiarPosicionAnimal(){
@@ -26,11 +26,7 @@ class Escenario{
     image(imagen, this.posicion.x, this.posicion.y, this.ancho, this.alto);
     this.animal.display();
   }
-  public void visualizarPuntaje(){
-  }
-  
-  public void visualizarTiempo(){
-  }
+ 
   public Animal getAnimal() {
     return this.animal;
   }

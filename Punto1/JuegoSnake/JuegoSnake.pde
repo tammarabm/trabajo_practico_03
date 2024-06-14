@@ -48,7 +48,7 @@ public void keyPressed(){
 }
 
 public void visualizarTiempoPuntaje(){
-  if(duracionCronometro-millis()/1000 >=0){  //Si el tiempo restante es mayor o igual a 0
+  if(duracionCronometro-millis()/1000 >0){  //Si el tiempo restante es mayor o igual a 0
     fill(255);
     textSize(20);
     text("Tiempo: "+(duracionCronometro-millis()/1000),50,30);
@@ -56,6 +56,8 @@ public void visualizarTiempoPuntaje(){
     text("Puntaje: " + snake.getPuntaje(), width-140, 30);
   }else {
     fill(255); 
+    text("Tiempo: "+ (duracionCronometro-millis()/1000),50,30);
+    text("Puntaje: " + snake.getPuntaje(), width-140, 30);
     textAlign(CENTER,CENTER);
     text("FIN", width/2, height/2);
     noLoop();

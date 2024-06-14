@@ -7,8 +7,9 @@ class Snake extends GameObject {
   public Snake(PVector posicion){
     this.posicion=posicion;
     this.puntaje=0;
-    cabeza= new Cabeza(new PVector(this.posicion.x, this.posicion.y));
+    cabeza= new Cabeza(new PVector(this.posicion.x, this.posicion.y),20,20);
     cuerpos=new ArrayList<Cuerpo>(); 
+    
   }
   public void display(){
     cabeza.display();
@@ -65,12 +66,12 @@ class Snake extends GameObject {
   public void aumentarCuerpo(){
     if (cuerpos.size()==0) {
       //Agrega el primer cuerpo 
-      cuerpos.add(new Cuerpo(new PVector(cabeza.getPosicion().x, cabeza.getPosicion().y)));
+      cuerpos.add(new Cuerpo(new PVector(cabeza.getPosicion().x, cabeza.getPosicion().y), 20,20));
     } else {
       //como no está vacio se obtiene el último cuerpo de la lista
       Cuerpo ultimoCuerpo = cuerpos.get(cuerpos.size() - 1);
       //agrea un nuevo cuerpo en la posicion que este ultimo cuerpo
-      cuerpos.add(new Cuerpo(new PVector(ultimoCuerpo.getPosicion().x, ultimoCuerpo.getPosicion().y)));
+      cuerpos.add(new Cuerpo(new PVector(ultimoCuerpo.getPosicion().x, ultimoCuerpo.getPosicion().y),20,20));
     }
   }
   
