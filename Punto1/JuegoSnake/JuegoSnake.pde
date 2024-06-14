@@ -11,7 +11,7 @@ public void setup(){
   escenario.setPosicion(new PVector(50, 50));
   snake = new Snake(new PVector(300,300));
   //snake.setPosicion(new PVector(width/2, height/2));
-  snake.setVelocidad(new PVector(6, 6));  
+  snake.setVelocidad(new PVector(140, 140));  
   // Inicialmente sin movimento
   direccion = -1; 
   direccionNueva = -1;

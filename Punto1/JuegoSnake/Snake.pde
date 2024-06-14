@@ -22,25 +22,25 @@ class Snake extends GameObject {
     switch(direccion){
       case 0: 
         if(this.posicion.y > escenario.getPosicion().y){
-          this.posicion.y-=this.velocidad.y;
+          this.posicion.y-=(this.velocidad.y*Time.getDeltaTime(frameRate));
           break;
         }
        break;
       case 1: 
         if(this.posicion.y < escenario.getPosicion().y+escenario.getAlto()-20){
-          this.posicion.y+=this.velocidad.y;
+          this.posicion.y+=(this.velocidad.y*Time.getDeltaTime(frameRate));
           break;
         }
         break;
       case 2: 
         if(this.posicion.x > escenario.getPosicion().x){
-          this.posicion.x-=this.velocidad.x; 
+          this.posicion.x-=(this.velocidad.x*Time.getDeltaTime(frameRate)); 
           break;
         }
         break;
       case 3:
         if(this.posicion.x < escenario.getPosicion().x+escenario.getAncho()-20){
-          this.posicion.x+=this.velocidad.x;
+          this.posicion.x+=(this.velocidad.x*Time.getDeltaTime(frameRate));
           break;
         }
         break;

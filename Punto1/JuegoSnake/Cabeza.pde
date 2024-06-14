@@ -8,7 +8,7 @@ class Cabeza {
     this.collider= new Collider(this.posicion,20,20);
   }
   public void display(){
-    fill(#B71C1C);
+    fill(#D33535);
     //noStroke();
     rect(this.posicion.x, this.posicion.y, 20,20);
   }

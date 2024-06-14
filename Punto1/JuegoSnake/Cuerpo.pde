@@ -9,7 +9,8 @@ class Cuerpo{
   }
  
    public void display(){
-     fill(255);
+     //fill(255);
+     fill(#D33535);
      rect(this.posicion.x, this.posicion.y, 20, 20);
    }
   
