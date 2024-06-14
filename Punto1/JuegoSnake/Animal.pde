@@ -1,6 +1,6 @@
 class Animal extends GameObject{
   private String tipoAnimal;
-  private int puntajeAnimal;
+  private int puntaje;
   private PImage imagen;
   private Collider collider;
   private float ancho;
@@ -8,14 +8,16 @@ class Animal extends GameObject{
   public Animal(PVector posicion){
     this.posicion=posicion;
   }
-  public Animal(PVector posicion, float ancho, float alto, int puntajeAnimal){
+  public Animal(PVector posicion, float ancho, float alto, int puntaje){
     imagen =loadImage("raton1.png");
     this.posicion=posicion;
     this.ancho=ancho;
     this.alto=alto;
-    this.puntajeAnimal=puntajeAnimal;
+    this.puntaje=puntaje;
     this.collider= new Collider(this.posicion, this.ancho,this.alto);
-  } /** 
+  }
+ 
+  /** 
   public Animal(String tipoAnimal, int puntajeAnimal){
     this.tipoAnimal=tipoAnimal;
     this.puntajeAnimal= puntajeAnimal;
@@ -30,6 +32,6 @@ class Animal extends GameObject{
    this.posicion=posicion;  
   }
   public int getPuntaje(){
-    return this.puntajeAnimal;
+    return this.puntaje;
   }
 }

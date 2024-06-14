@@ -22,17 +22,7 @@ public void draw(){
   background(0);
   escenario.display();
   snake.display();
-  if(duracionCronometro-millis()/1000 >=0){  //Si el tiempo restante es mayor o igual a 0
-    fill(255);
-    textSize(20);
-    text("Segundos: "+(duracionCronometro-millis()/1000),10,20);
-  }else {
-    fill(255); 
-    textAlign(CENTER,CENTER);
-    text("FIN", width/2, height/2);
-    noLoop();
-  }
-  
+  visualizarTiempoPuntaje();
   cabeza= snake.getCabeza();
   animal= escenario.getAnimal();
   
@@ -55,4 +45,20 @@ public void keyPressed(){
   } else if ((key == 'd' || keyCode == RIGHT) && direccion != 2){
      direccionNueva = 3; 
   }
+}
+
+public void visualizarTiempoPuntaje(){
+  if(duracionCronometro-millis()/1000 >=0){  //Si el tiempo restante es mayor o igual a 0
+    fill(255);
+    textSize(20);
+    text("Tiempo: "+(duracionCronometro-millis()/1000),50,30);
+    snake.actualizarPuntaje();
+    text("Puntaje: " + snake.getPuntaje(), width-140, 30);
+  }else {
+    fill(255); 
+    textAlign(CENTER,CENTER);
+    text("FIN", width/2, height/2);
+    noLoop();
+  }
+  
 }

@@ -1,10 +1,12 @@
 class Cabeza {
   private PVector posicion; 
   private Collider collider; 
+  private int puntaje;
   public Cabeza(){
   }
   public Cabeza(PVector posicion){
     this.posicion=posicion;
+    this.puntaje=0;
     this.collider= new Collider(this.posicion,20,20);
   }
   public void display(){
@@ -22,16 +24,26 @@ class Cabeza {
         e.eliminarAnimal();
         e.cambiarPosicionAnimal();
         snake.aumentarCuerpo();
+        this.puntaje += a.getPuntaje();
+        //print(this.puntaje);
+        
+        
       }else{
       //println("NO HAY COLISION");
      }
     }
+    
    }
+   
   public void setPosicion(PVector posicion){
     this.posicion=posicion;
     this.collider.setPosicion(this.posicion);
   }
   public PVector getPosicion(){
     return this.posicion;
+  }
+  public int getPuntaje(){
+    return this.puntaje;
+  
   }
 } 

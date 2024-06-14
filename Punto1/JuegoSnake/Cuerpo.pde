@@ -1,13 +1,12 @@
 class Cuerpo{
   private PVector posicion; 
-  private float ancho;
-  private float alto;
+  //private float ancho;
+  //private float alto;
   public Cuerpo(){
   }
   public Cuerpo(PVector posicion){
      this.posicion=posicion;
   }
- 
    public void display(){
      //fill(255);
      fill(#D33535);
@@ -15,8 +14,9 @@ class Cuerpo{
    }
   
   public void setPosicion(PVector posicion){
-   this.posicion=posicion;   
+     this.posicion=posicion;   
   }
+  
   public PVector getPosicion(){
     return this.posicion; 
   }
