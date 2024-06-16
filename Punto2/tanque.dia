@@ -1469,7 +1469,7 @@
         <dia:point val="15.3,3.85"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="8.675,3.8;15.35,10.25"/>
+        <dia:rectangle val="8.675,3.05;15.35,10.25"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -1641,7 +1641,7 @@
         <dia:string>#*#</dia:string>
       </dia:attribute>
       <dia:attribute name="visibility_b">
-        <dia:enum val="3"/>
+        <dia:enum val="1"/>
       </dia:attribute>
       <dia:attribute name="show_arrow_b">
         <dia:boolean val="false"/>
