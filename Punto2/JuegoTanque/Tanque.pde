@@ -13,9 +13,9 @@ class Tanque{
     this.imageComponent=imageComponent;
     this.velocidad=velocidad;
   }
-  public void dibujar(){
-    
+  public void dibujar(){ 
     this.imageComponent.displayImage(transform.getPosicion(),100,100);
+    
   }
   
   public void mover(int direccion){
