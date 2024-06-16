@@ -1,15 +1,15 @@
 class Transform{
-  private PVector position;
+  private PVector posicion;
   
-  public Transform(PVector position){
-    this.position = position;
+  public Transform(PVector posicion){
+    this.posicion = posicion;
   }
   
-  public PVector getPosition(){
-    return this.position;
+  public PVector getPosicion(){
+    return this.posicion;
   }
   
-  public void setPosition(PVector position){
-    this.position = position;
+  public void setPosicion(PVector posicion){
+    this.posicion = posicion;
   }
 }
