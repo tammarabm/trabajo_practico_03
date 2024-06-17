@@ -1,3 +1,11 @@
 class GestorBalas{
-   private Bala balas; 
+   private ArrayList<Bala> balas;
+   
+   public void agregarBala(){
+   
+   }
+   
+   public void eliminarBala(){
+   
+   }
 }

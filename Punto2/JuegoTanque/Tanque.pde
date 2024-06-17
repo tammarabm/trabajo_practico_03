@@ -2,7 +2,6 @@ class Tanque{
   private Transform transform;
   private ImageComponent imageComponent;
   private PVector velocidad; 
-  private Bala balas;
   
   public Tanque(Transform transform, ImageComponent imageComponent){
     this.transform=transform;
@@ -14,7 +13,6 @@ class Tanque{
     this.velocidad=velocidad;
   }
   public void dibujar(){
-    
     this.imageComponent.displayImage(transform.getPosicion(),100,100);
   }
   
@@ -30,7 +28,10 @@ class Tanque{
         if (this.transform.getPosicion().x > width){
           this.transform.getPosicion().x=-100;
         }
-      } 
-    
+      }  
+  }
+  
+  public void disparar(GestorBalas balasRealizadas){
+  
   }
 }
