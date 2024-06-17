@@ -1,8 +1,10 @@
 private Tanque tanque;
 private JoyPad joyPad;
 private Muro muro;
-public GestorMurallas gestorMurallas;
-public PImage fondo;
+private GestorMurallas gestorMurallas;
+private PImage fondo;
+private Bala bala;
+
 public void setup(){
   size(700,500);
   fondo=loadImage("fondo.jpg");
@@ -18,7 +20,15 @@ public void setup(){
   Transform transformTanque = new Transform(new PVector(width/2,height-90));
   ImageComponent imageTanque = new ImageComponent("tanque.png");
   tanque = new Tanque(transformTanque,imageTanque, new PVector(320,0));
+  
+  //JoyPad
   joyPad = new JoyPad();
+  
+  //Bala
+  Transform transformBala= new Transform(new PVector(transformTanque.getPosicion().x,transformTanque.getPosicion().y));
+  ImageComponent imageBala= new ImageComponent("bala.png");
+  bala= new Bala(transformBala, imageBala, new PVector(0,0));
+  
 }
 
 public void draw(){
@@ -28,6 +38,7 @@ public void draw(){
   noTint();
   gestorMurallas.dibujar();
   tanque.dibujar();
+  bala.dibujar();
     
   if(joyPad.isRightPressed()){
     tanque.mover(1);

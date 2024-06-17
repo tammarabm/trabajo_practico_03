@@ -15,7 +15,7 @@ class GestorMurallas{
     }
   }
   
-  public void verificarColision(ArrayLis<Bala>balas){
+  public void verificarColision(ArrayList<Bala>balas){
     
   
   }
