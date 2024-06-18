@@ -1,16 +1,19 @@
 class Snake extends GameObject {
+  //Atributos
   private PVector velocidad;
   private int puntaje; 
   private Cabeza cabeza;
   private ArrayList<Cuerpo>cuerpos;
   
+  //Constructor parametrizado
   public Snake(PVector posicion){
     this.posicion=posicion;
     this.puntaje=0;
     cabeza= new Cabeza(new PVector(this.posicion.x, this.posicion.y),20,20);
     cuerpos=new ArrayList<Cuerpo>(); 
-    
   }
+  
+  //Metodos
   public void display(){
     cabeza.display();
     for (Cuerpo c: cuerpos){
@@ -19,8 +22,7 @@ class Snake extends GameObject {
   }
   
   public void mover(int direccion, Escenario escenario){
-    PVector posicionActualCabeza = new PVector(cabeza.getPosicion().x, cabeza.getPosicion().y); //Mantiene la referencia a la posicion anterior de la cabeza antes de que se mueva
-    
+    PVector posicionActualCabeza = new PVector(cabeza.getPosicion().x, cabeza.getPosicion().y); //Mantiene la referencia a la posicion anterior de la cabeza antes de que se mueva  
     switch(direccion){
       case 0: 
         if(this.posicion.y > escenario.getPosicion().y){
@@ -76,8 +78,7 @@ class Snake extends GameObject {
   }
   
   public void actualizarPuntaje(){
-    this.puntaje=cabeza.getPuntaje();
-  
+    this.puntaje=cabeza.getPuntaje();  
   }
   
   public void setPosicion(PVector posicion){
@@ -95,6 +96,5 @@ class Snake extends GameObject {
   }
   public int getPuntaje(){
     return this.puntaje;
-  
   }
 }

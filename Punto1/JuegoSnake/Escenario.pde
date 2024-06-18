@@ -3,32 +3,21 @@ class Escenario{
   private PImage imagen;
   private int alto;
   private int ancho;
-  private Animal animal;
+  private ListaAnimal listaAnimal;
   public Escenario(){
     imagen= loadImage("fondoSnake.jpg");   
     this.alto= height-100;
     this.ancho= width-100;
-    crearAnimal();
-    
-  }
-  public void crearAnimal(){
-    this.animal= new Animal(new PVector(300,400), 40,40,1);
-    //this.animal.setPosicion(new PVector(random(50, this.ancho), random(50, this.alto)));
-  }
-  public void cambiarPosicionAnimal(){
-    this.animal= new Animal(new PVector(random(this.posicion.x, this.ancho), random(this.posicion.y, this.alto)),35,35, 1);
-  }
-  public void eliminarAnimal(){
-    this.animal=null;
+    listaAnimal= new ListaAnimal();
   }
   
   public void display(){
     image(imagen, this.posicion.x, this.posicion.y, this.ancho, this.alto);
-    this.animal.display();
+    listaAnimal.mostrar();
   }
  
-  public Animal getAnimal() {
-    return this.animal;
+  public ListaAnimal getListaAnimales() {
+    return this.listaAnimal;
   }
   public PVector getPosicion(){
     return this.posicion;

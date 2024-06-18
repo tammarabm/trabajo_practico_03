@@ -17,28 +17,10 @@ class Cabeza {
     fill(#3349B4);
     noStroke();
     rect(this.posicion.x, this.posicion.y, this.ancho,this.alto);
+  }   
+  public void aumentarPuntaje(int incremento) {
+    this.puntaje += incremento;
   }
-
-  public void comer(Animal a, Escenario e){
-    if (a!=null){
-      boolean isCollide=this.collider.validarColision(a.getCollider());
-      if (isCollide){
-        //println("HAY COLISION");
-        //println(isCollide);
-        e.eliminarAnimal();
-        e.cambiarPosicionAnimal();
-        snake.aumentarCuerpo();
-        this.puntaje += a.getPuntaje();
-        //print(this.puntaje);
-        
-        
-      }else{
-      //println("NO HAY COLISION");
-     }
-    }
-    
-   }
-   
   public void setPosicion(PVector posicion){
     this.posicion=posicion;
     this.collider.setPosicion(this.posicion);
@@ -48,6 +30,8 @@ class Cabeza {
   }
   public int getPuntaje(){
     return this.puntaje;
-  
+  }
+   public Collider getCollider() {
+    return this.collider;
   }
 } 

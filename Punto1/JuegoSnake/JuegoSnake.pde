@@ -11,7 +11,6 @@ public void setup(){
   escenario= new Escenario();
   escenario.setPosicion(new PVector(50, 50));
   snake = new Snake(new PVector(300,300));
-  //snake.setPosicion(new PVector(width/2, height/2));
   snake.setVelocidad(new PVector(140, 140));  
   // Inicialmente sin movimento
   direccion = -1; 
@@ -24,9 +23,8 @@ public void draw(){
   snake.display();
   visualizarTiempoPuntaje();
   cabeza= snake.getCabeza();
-  animal= escenario.getAnimal();
-  
-  cabeza.comer(animal, escenario);
+  // Verifica si el snake come un animal
+  escenario.getListaAnimales().verificarColision(cabeza, snake);
   if (direccionNueva != -1) {
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if
   }
