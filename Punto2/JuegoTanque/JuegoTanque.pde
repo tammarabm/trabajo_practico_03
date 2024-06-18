@@ -6,11 +6,10 @@ private GestorBalas gestorBalas;
 
 public void setup(){
   size(700,500);
- 
   //Muro
   Transform transformMuro= new Transform(new PVector(random(width-110),random(height/2-70)));
   ImageComponent imageMuro= new ImageComponent("muro1.jpg");
-  muro= new Muro(transformMuro, imageMuro, 5);
+  muro= new Muro(transformMuro, imageMuro, ((int)random(10,30)));
   gestorMurallas=new GestorMurallas();
   gestorMurallas.agregarMuro(muro);
   
@@ -32,17 +31,16 @@ public void draw(){
   gestorMurallas.dibujar();
   gestorBalas.actualizarBalas();
   tanque.dibujar();
+  gestorMurallas.verificarColision(gestorBalas.getBalas());
   
-    
   if(joyPad.isRightPressed()){
     tanque.mover(1);
-  }
-    
+  }  
   if(joyPad.isLeftPressed()){
     tanque.mover(0);
   }
 }
-  
+
 public void keyPressed(){
     if (key== 'd' || keyCode==RIGHT){
       joyPad.setRightPressed(true);

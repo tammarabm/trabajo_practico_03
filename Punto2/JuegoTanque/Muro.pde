@@ -10,11 +10,14 @@ class Muro{
   }
   
   public void dibujar(){
+    imageMode(CENTER);
     this.imageComponent.displayImage(transform.getPosicion(),110,70);
   }
   
   public void recibirDanio(int danio){
+    println(resistencia);
     resistencia-=danio;
+    println(resistencia);
   }
   
   public boolean destruir(){
