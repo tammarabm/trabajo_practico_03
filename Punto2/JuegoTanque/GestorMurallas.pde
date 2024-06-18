@@ -18,7 +18,7 @@ class GestorMurallas{
       Bala bala = balas.get(i); //Se accede al elemento de la lista balas en la posicion i y despues se lo asigna a la variable bala
       for (int j = muros.size() - 1; j >= 0; j--) { //Recorre la lista de muros
         Muro muro = muros.get(j); //Se accede al elemnto de la lista muros en la posicion i y despues se lo asigna a la variable muro
-        if (bala.colisionaCon(muro)) { //Se llama al metodo de la clase Bala.Verifica si la bala ha colisionado con el muro. Devuelve True si han colisionado
+        if (bala.colisionar(muro)) { //Se llama al metodo de la clase Bala.Verifica si la bala ha colisionado con el muro. Devuelve True si han colisionado
           muro.recibirDanio(10); //Se llama al metodo recibirDanio() de la clase Muro. Se resta a la resistencia del muro 10 puntos
           balas.remove(i); //La bala en la posicion i se elimina porque hay colision con el muro
           if (muro.destruir()) { //Se llama al metodo destruir de la clase Muro. Si la resistencia llega a 0 el muro se destruye
