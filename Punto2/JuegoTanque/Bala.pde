@@ -1,18 +1,31 @@
 class Bala{
-  private Transform transform;
-  private ImageComponent imageComponent;
+  private PVector posicion;
+  private PImage imagen;
   private PVector velocidad;
   
-  public Bala(Transform transform, ImageComponent imageComponent){
-    this.transform=transform;
-    this.imageComponent=imageComponent;
+  //Constructor por defecto
+  public Bala(){
   }
-  public Bala(Transform transform, ImageComponent imageComponent, PVector velocidad){
-    this.transform=transform;
-    this.imageComponent=imageComponent;
+  
+  //Constructor parametrizado
+  public Bala(PVector posicion){
+    this.posicion=posicion;
+    this.velocidad= new PVector(0,-100);  //inicializamos la velocidad
+    imagen=loadImage("bala.png");
+  }
+  
+  public Bala(PVector posicion, PVector velocidad){
+    this.posicion=posicion;
     this.velocidad=velocidad;
   }
+
+  
+  //Metodos
   public void dibujar(){
-    this.imageComponent.displayImage(transform.getPosicion(),30,30);
+    image(imagen,this.posicion.x,this.posicion.y-50,30,30);
+  }
+  
+  public void mover(){
+    this.posicion.y+=(this.velocidad.y*Time.getDeltaTime(frameRate));
   }
 }

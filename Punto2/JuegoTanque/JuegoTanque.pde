@@ -2,12 +2,10 @@ private Tanque tanque;
 private JoyPad joyPad;
 private Muro muro;
 private GestorMurallas gestorMurallas;
-private PImage fondo;
-private Bala bala;
+private GestorBalas gestorBalas;
 
 public void setup(){
   size(700,500);
-  fondo=loadImage("fondo.jpg");
  
   //Muro
   Transform transformMuro= new Transform(new PVector(random(width-110),random(height/2-70)));
@@ -17,28 +15,24 @@ public void setup(){
   gestorMurallas.agregarMuro(muro);
   
   //Tanque
-  Transform transformTanque = new Transform(new PVector(width/2,height-90));
+  Transform transformTanque = new Transform(new PVector(width/2,height-40));
   ImageComponent imageTanque = new ImageComponent("tanque.png");
   tanque = new Tanque(transformTanque,imageTanque, new PVector(320,0));
   
   //JoyPad
   joyPad = new JoyPad();
   
-  //Bala
-  Transform transformBala= new Transform(new PVector(transformTanque.getPosicion().x,transformTanque.getPosicion().y));
-  ImageComponent imageBala= new ImageComponent("bala.png");
-  bala= new Bala(transformBala, imageBala, new PVector(0,0));
-  
+  //GestorBalas
+  gestorBalas=new GestorBalas();
+
 }
 
 public void draw(){
-  //background(#4400BC);
-  tint(#31AA16);
-  image(fondo,0,0,width,height);
-  noTint();
+  background(0);
   gestorMurallas.dibujar();
+  gestorBalas.actualizarBalas();
   tanque.dibujar();
-  bala.dibujar();
+  
     
   if(joyPad.isRightPressed()){
     tanque.mover(1);
@@ -55,6 +49,9 @@ public void keyPressed(){
   }
     if (key== 'a' || keyCode==LEFT){
       joyPad.setLeftPressed(true);
+  }
+  if (keyCode==ENTER){
+     tanque.disparar(gestorBalas);   
   }
 }
 
