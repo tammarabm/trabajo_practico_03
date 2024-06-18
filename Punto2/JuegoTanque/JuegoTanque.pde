@@ -7,11 +7,7 @@ private GestorBalas gestorBalas;
 public void setup(){
   size(700,500);
   //Muro
-  Transform transformMuro= new Transform(new PVector(random(width-110),random(height/2-70)));
-  ImageComponent imageMuro= new ImageComponent("muro1.jpg");
-  muro= new Muro(transformMuro, imageMuro, ((int)random(10,30)));
-  gestorMurallas=new GestorMurallas();
-  gestorMurallas.agregarMuro(muro);
+  crearMuro();
   
   //Tanque
   Transform transformTanque = new Transform(new PVector(width/2,height-40));
@@ -60,4 +56,12 @@ public void keyReleased(){
   if (key== 'a' || keyCode==LEFT){
      joyPad.setLeftPressed(false);
   }
+}
+
+public void crearMuro(){
+  Transform transformMuro= new Transform(new PVector(random(width-110),random(height/2-70)));
+  ImageComponent imageMuro= new ImageComponent("muro1.jpg");
+  muro= new Muro(transformMuro, imageMuro, ((int)random(10,30)));
+  gestorMurallas=new GestorMurallas();
+  gestorMurallas.getMuros().add(muro);
 }

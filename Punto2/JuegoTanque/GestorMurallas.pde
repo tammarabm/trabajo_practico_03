@@ -5,10 +5,6 @@ class GestorMurallas{
     muros= new ArrayList<Muro>();
   }
   
-  public void agregarMuro(Muro muro){
-      muros.add(muro);
-  }
-  
   public void dibujar(){
     for(Muro m: muros){
       m.dibujar();
@@ -38,6 +34,9 @@ class GestorMurallas{
     ImageComponent imageMuro= new ImageComponent("muro1.jpg");
     muro= new Muro(transformMuro, imageMuro, ((int)random(10,30)));
     gestorMurallas=new GestorMurallas();
-    gestorMurallas.agregarMuro(muro);
+    gestorMurallas.getMuros().add(muro);
+  }
+  public ArrayList<Muro> getMuros(){
+    return this.muros;
   }
 }
