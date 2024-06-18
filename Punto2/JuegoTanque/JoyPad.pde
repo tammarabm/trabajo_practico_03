@@ -1,7 +1,9 @@
 class JoyPad{
+  //Atributos
   private boolean rightPressed;
   private boolean leftPressed; 
   
+  //Metodos accesores
   public boolean isRightPressed(){  
     return this.rightPressed;
   }
