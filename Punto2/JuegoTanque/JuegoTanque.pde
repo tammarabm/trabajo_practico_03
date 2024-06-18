@@ -50,8 +50,8 @@ public void keyPressed(){
     if (key== 'a' || keyCode==LEFT){
       joyPad.setLeftPressed(true);
   }
-  if (keyCode==ENTER){
-     tanque.disparar(gestorBalas);   
+    if (keyCode==ENTER){
+       tanque.disparar(gestorBalas);   
   }
 }
 

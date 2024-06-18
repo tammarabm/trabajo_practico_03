@@ -28,4 +28,8 @@ class Bala{
   public void mover(){
     this.posicion.y+=(this.velocidad.y*Time.getDeltaTime(frameRate));
   }
+  
+  public PVector getPosicion(){
+    return this.posicion;
+  }
 }

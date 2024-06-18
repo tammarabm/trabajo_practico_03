@@ -34,19 +34,7 @@ class Tanque{
   
   public void disparar(GestorBalas disparosRealizados){  //El metodo disparar() recibe un objeto de GestorBalas llamada disparosRealizados
     //Creo una Bala en la misma posicion del tanque
-   
     Bala bala= new Bala(new PVector(this.transform.getPosicion().x,this.transform.getPosicion().y));
-    //Creo un arreglo de Balas y lo obtengo a partir del arreglo de balas que tiene el GestorBalas, por eso la dependencia
-    Bala[] balas=disparosRealizados.getBalas();
-    //Recorro el arreglo que se llama balas y que está en el GestorBalas
-    for(int i=0; i<balas.length;i++){ 
-      if(balas[i]==null){       //Si el elemento del arreglo en la posicion i es nulo entonces ahi pondremos la bala
-        //Le asigno la bala que hemos creado al arreglo de balas
-        balas[i]= bala;
-        break;
-      }
-    }
-    //El arreglo de balas que hemos creado que ahora tiene la bala que creamos se lo asignamos al GestorBalas
-    disparosRealizados.setBalas(balas);
+    disparosRealizados.getBalas().add(bala);
   }
 }
