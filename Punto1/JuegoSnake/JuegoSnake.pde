@@ -1,10 +1,9 @@
 private Snake snake;
 private Escenario escenario;
+private Cabeza cabeza;
 private int direccion; // Dirección actual del snake
 private int direccionNueva; // Nueva dirección del snake
-private int duracionCronometro;
-private Animal animal;
-private Cabeza cabeza;
+private int duracionCronometro; //El tiempo del juego
 
 public void setup(){
   size(600, 700);
@@ -23,8 +22,9 @@ public void draw(){
   snake.display();
   visualizarTiempoPuntaje();
   cabeza= snake.getCabeza();
-  // Verifica si el snake come un animal
-  escenario.getListaAnimales().verificarColision(cabeza, snake);
+  //Verifica si el snake come un animal y en que segundo
+  int tiempo = duracionCronometro - millis() / 1000;
+  escenario.getListaAnimales().verificarColision(cabeza, snake, tiempo);
   if (direccionNueva != -1) {
     direccion = direccionNueva; // Actualiza la dirección solo si se cumple la condicion if
   }
@@ -57,8 +57,16 @@ public void visualizarTiempoPuntaje(){
     text("Tiempo: "+ (duracionCronometro-millis()/1000),50,30);
     text("Puntaje: " + snake.getPuntaje(), width-140, 30);
     textAlign(CENTER,CENTER);
-    text("FIN", width/2, height/2);
+    mostrarRegistroAnimales();
     noLoop();
   }
-  
 }
+public void mostrarRegistroAnimales(){
+  ArrayList<String>registro=escenario.getListaAnimales().getRegistroAnimales();
+  int y = height / 2 - 200;
+  for (String r : registro) {
+    text(r, width / 2, y);
+    y += 20;
+  }
+}
+  

@@ -1,8 +1,10 @@
 class Collider{
+  //Atributos
   private PVector posicion;
   private float alto;
   private float ancho;
 
+  //Constructor parametrizado
   public Collider(PVector posicion, float ancho, float alto){
     this.posicion=posicion;
     this.ancho=ancho;
@@ -25,10 +27,10 @@ class Collider{
     }else{
       isCollide=true;
     }
-    //println(this.posicion);
-    //println(otroCollider.getPosicion());
     return isCollide;
   }
+  
+  //Métodos accesores
   public PVector getPosicion(){
     return this.posicion; 
   }

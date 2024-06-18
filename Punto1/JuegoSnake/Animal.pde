@@ -5,6 +5,7 @@ class Animal extends GameObject{
   private Collider collider;
   private float ancho;
   private float alto;
+  //Constructor parametrizado
   public Animal(PVector posicion){
     this.posicion=posicion;
   }
@@ -18,9 +19,11 @@ class Animal extends GameObject{
     this.collider= new Collider(this.posicion, this.ancho,this.alto);
   }
  
+ //Metodos
   public void display(){
     image(imagen, this.posicion.x, this.posicion.y, this.ancho,this.alto);
   }
+  //Metodos accesores
   public Collider getCollider(){
     return this.collider;
   }
@@ -29,5 +32,8 @@ class Animal extends GameObject{
   }
   public int getPuntaje(){
     return this.puntaje;
+  }
+  public String getTipoAnimal(){
+    return this.tipoAnimal;
   }
 }

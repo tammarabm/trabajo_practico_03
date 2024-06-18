@@ -77,9 +77,11 @@ class Snake extends GameObject {
     }
   }
   
-  public void actualizarPuntaje(){
-    this.puntaje=cabeza.getPuntaje();  
+  public void actualizarPuntaje(){  
+    this.puntaje=cabeza.getPuntaje();   
   }
+  
+  //Métodos Accesores
   
   public void setPosicion(PVector posicion){
    this.posicion=posicion;
