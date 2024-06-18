@@ -10,7 +10,7 @@ class Bala{
   //Constructor parametrizado
   public Bala(PVector posicion){
     this.posicion=posicion;
-    this.velocidad= new PVector(0,-100);  //inicializamos la velocidad
+    this.velocidad= new PVector(0,-180);  //inicializamos la velocidad
     imagen=loadImage("bala.png");
   }
   

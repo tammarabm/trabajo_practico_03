@@ -25,10 +25,19 @@ class GestorMurallas{
           balas.remove(i);
           if (muro.destruir()) {
             muros.remove(j);
+            crearOtroMuro();
+            
           }
           break; 
         }
       }
     }
+  }
+  public void crearOtroMuro(){
+    Transform transformMuro= new Transform(new PVector(random(width-110),random(height/2-70)));
+    ImageComponent imageMuro= new ImageComponent("muro1.jpg");
+    muro= new Muro(transformMuro, imageMuro, ((int)random(10,30)));
+    gestorMurallas=new GestorMurallas();
+    gestorMurallas.agregarMuro(muro);
   }
 }
